@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Challenge design folder
+.challenge
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
