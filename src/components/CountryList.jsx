@@ -5,7 +5,7 @@ function CountryList(props) {
   return (
     <div>
       {props.countries.map((country) => {
-        return <Country country={country} />;
+        return <Country key={country["cca3"]} country={country} />;
       })}
     </div>
   );

@@ -5,7 +5,9 @@ function Header(props) {
     <header>
       <nav>
         <h3>Where in the world!</h3>
-        <span>Dark theme</span>
+        <span>
+          <i className="fa-solid fa-moon"></i>Dark theme
+        </span>
       </nav>
     </header>
   );
