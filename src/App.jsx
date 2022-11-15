@@ -13,6 +13,7 @@ function App() {
   const [region, setRegion] = useState("default");
   const [countryData, setCountryData] = useState([]);
   const [theme, setTheme] = useState("dark");
+  const [error, setError] = useState("");
 
   function toggleThemeHandler() {
     setTheme((prevState) => {
@@ -42,17 +43,22 @@ function App() {
 
   useEffect(() => {
     async function fetchData(countryName, regionName) {
+      setError("");
       if (countryName) {
-        const newData = await axios.get(
-          `https://restcountries.com/v3.1/name/${countryName}`
-        );
-        if (regionName !== "default") {
-          setCountryData(
-            newData.data.filter((country) => {
-              return country.region === regionName;
-            })
+        try {
+          const newData = await axios.get(
+            `https://restcountries.com/v3.1/name/${countryName}`
           );
-        } else setCountryData(newData.data);
+          if (regionName !== "default") {
+            setCountryData(
+              newData.data.filter((country) => {
+                return country.region === regionName;
+              })
+            );
+          } else setCountryData(newData.data);
+        } catch (err) {
+          setError("No matches");
+        }
       } else {
         const allCountries = await axios.get(
           "https://restcountries.com/v3.1/all"
@@ -81,6 +87,14 @@ function App() {
                 <section className={"query-container"} id={"query"}>
                   <div className={"input__country"}>
                     <i className="fa-solid fa-magnifying-glass"></i>
+                    {searchTerm && (
+                      <i
+                        className="fa-solid fa-circle-xmark"
+                        onClick={() => {
+                          setSearchTerm("");
+                        }}
+                      ></i>
+                    )}
                     <input
                       placeholder={"Search for a country..."}
                       value={searchTerm}
@@ -104,7 +118,11 @@ function App() {
                     <option value={"Oceania"}>Oceania</option>
                   </select>
                 </section>
-                <CountryList countries={countryData} />
+                {error ? (
+                  <div className={"error"}>No matches</div>
+                ) : (
+                  <CountryList countries={countryData} />
+                )}
               </>
             }
           />

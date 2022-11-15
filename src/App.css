@@ -44,12 +44,18 @@ main {
   border-radius: 5px;
 }
 
-.input__country i {
+.input__country .fa-magnifying-glass {
   position: absolute;
   top: 1.0625rem;
   left: 1.5625rem;
 }
 
+.input__country .fa-circle-xmark {
+  position: absolute;
+  top: 1.0625rem;
+  right: 1.5625rem;
+  cursor: pointer;
+}
 #query select {
   font-family: "Nunito Sans", sans-serif;
   border: none;
@@ -65,13 +71,22 @@ main {
   min-height: 12.5rem;
 }
 
-.app-dark .query-container {
+.error {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  flex-grow: 1;
+}
+
+.app-dark .query-container,
+.app-dark .error {
   background-color: hsl(207, 26%, 17%);
 }
 
 .app-dark .query-container select,
 .app-dark .query-container input,
-.app-dark .query-container .input__country {
+.app-dark .query-container .input__country,
+.app-dark .error {
   color: white;
 }
 
@@ -80,7 +95,8 @@ main {
   background-color: hsl(209, 23%, 22%);
 }
 
-.app-light .query-container {
+.app-light .query-container,
+.app-light .error {
   background-color: hsl(0, 0%, 98%);
 }
 
@@ -95,6 +111,7 @@ main {
 .query-container,
 .query-container select,
 .query-container input,
-.query-container .input__country {
+.query-container .input__country,
+.error {
   transition: all 0.3s ease-in;
 }
