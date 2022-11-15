@@ -70,7 +70,7 @@ function App() {
     fetchData(debouncedSearchTerm, region);
   }, [debouncedSearchTerm, region]);
   return (
-    <div className={`app-${theme}`}>
+    <div id={"theme-main"} className={`app-${theme}`}>
       <Header theme={theme} onThemeToggle={toggleThemeHandler} />
       <main>
         <Routes>

@@ -39,3 +39,7 @@
 .app-light .country:-webkit-any-link {
   color: hsl(200, 15%, 8%);
 }
+
+.country {
+  transition: all 0.3s ease-in;
+}

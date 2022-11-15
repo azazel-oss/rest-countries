@@ -144,3 +144,8 @@
     transform: rotate(360deg);
   }
 }
+
+.details,
+.details .btn {
+  transition: all 0.3s ease-in;
+}

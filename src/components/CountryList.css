@@ -21,3 +21,7 @@
 .app-dark .countries {
   background-color: hsl(207, 26%, 17%);
 }
+
+.countries {
+  transition: all 0.3s ease-in;
+}

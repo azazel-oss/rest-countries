@@ -91,3 +91,10 @@ main {
 .app-light .query-container input {
   box-shadow: 0 0 5px 1px hsla(0, 0%, 0%, 20%);
 }
+
+.query-container,
+.query-container select,
+.query-container input,
+.query-container .input__country {
+  transition: all 0.3s ease-in;
+}
