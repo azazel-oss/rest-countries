@@ -110,6 +110,7 @@ function App() {
                     <option defaultValue disabled hidden value={"default"}>
                       Filter by region
                     </option>
+                    <option value={"default"}>All regions</option>
                     <option value={"Asia"}>Asia</option>
                     <option value={"Africa"}>Africa</option>
                     <option value={"Americas"}>Americas</option>
