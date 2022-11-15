@@ -6,7 +6,10 @@ import { ThemeContext } from "../context/ThemeContext.jsx";
 function Country({ country }) {
   const { theme } = useContext(ThemeContext);
   return (
-    <Link className={`country country-${theme}`} to={`/${country["cca3"]}`}>
+    <Link
+      className={`country country-${theme}`}
+      to={`/rest-countries/${country["cca3"]}`}
+    >
       <img alt={`${country.name.common} flag`} src={country.flags.png} />
 
       <div className={"country-details"}>

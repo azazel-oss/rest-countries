@@ -49,7 +49,7 @@ function CountryDetail() {
     <div className={`details details-${theme}`}>
       {countryData && Object.keys(countryData).length > 0 && countryBorders ? (
         <div>
-          <Link className={"btn btn-back"} to={"/"}>
+          <Link className={"btn btn-back"} to={"/rest-countries"}>
             <i className={"fa-solid fa-left-long"}></i>
             Back
           </Link>
@@ -123,7 +123,7 @@ function CountryDetail() {
                       <Link
                         className={"btn btn-borders"}
                         key={border.code}
-                        to={`/${border.code}`}
+                        to={`/rest-countries/${border.code}`}
                       >
                         {border.name}
                       </Link>

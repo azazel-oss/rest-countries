@@ -67,7 +67,7 @@ function App() {
       <Header />
       <Routes>
         <Route
-          path={"/"}
+          path={"/rest-countries/"}
           element={
             <>
               <section className={`query-${theme}`} id={"query"}>
@@ -100,7 +100,10 @@ function App() {
             </>
           }
         />
-        <Route path={"/:countryCode"} element={<CountryDetail />} />
+        <Route
+          path={"/rest-countries/:countryCode"}
+          element={<CountryDetail />}
+        />
       </Routes>
     </main>
   );
