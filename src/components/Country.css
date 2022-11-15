@@ -1,0 +1,42 @@
+.country {
+  border-radius: 5px;
+  text-decoration: none;
+  width: 250px;
+  margin-bottom: 30px;
+}
+
+.country-details {
+  padding: 20px;
+}
+
+.country-name {
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin: 5px 0 10px 0;
+}
+
+.country-head {
+  font-weight: 600;
+}
+.country img {
+  border-radius: 5px 5px 0 0;
+  height: 150px;
+  width: 100%;
+}
+
+.country-dark {
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+}
+
+.country-dark:-webkit-any-link {
+  color: hsl(0, 0%, 100%);
+}
+
+.country-light {
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 0 5px 1px hsla(0, 0%, 0%, 20%);
+}
+.country-light:-webkit-any-link {
+  color: hsl(200, 15%, 8%);
+}

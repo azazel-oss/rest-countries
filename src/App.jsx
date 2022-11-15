@@ -1,10 +1,11 @@
 import Header from "./components/Header.jsx";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import CountryList from "./components/CountryList.jsx";
 import { Route, Routes } from "react-router-dom";
 import CountryDetail from "./components/CountryDetail.jsx";
 import "./App.css";
+import { ThemeContext } from "./context/ThemeContext.jsx";
 
 function App() {
   let timer = null;
@@ -12,6 +13,7 @@ function App() {
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(searchTerm);
   const [region, setRegion] = useState("default");
   const [countryData, setCountryData] = useState([]);
+  const { theme } = useContext(ThemeContext);
   function inputChangeHandler(event) {
     setSearchTerm(event.target.value);
   }
@@ -61,23 +63,30 @@ function App() {
     fetchData(debouncedSearchTerm, region);
   }, [debouncedSearchTerm, region]);
   return (
-    <div>
+    <main>
       <Header />
       <Routes>
         <Route
           path={"/"}
           element={
             <>
-              <section id={"query"}>
-                <input value={searchTerm} onChange={inputChangeHandler} />
+              <section className={`query-${theme}`} id={"query"}>
+                <div className={"input__country"}>
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                  <input
+                    placeholder={"Search for a country..."}
+                    value={searchTerm}
+                    onChange={inputChangeHandler}
+                  />
+                </div>
                 <select
                   value={region}
                   placeholder={"Select Region"}
                   name={"Region"}
                   onChange={regionChangeHandler}
                 >
-                  <option defaultValue disabled value={"default"}>
-                    Please select region
+                  <option defaultValue disabled hidden value={"default"}>
+                    Filter by region
                   </option>
                   <option value={"Asia"}>Asia</option>
                   <option value={"Africa"}>Africa</option>
@@ -93,7 +102,7 @@ function App() {
         />
         <Route path={"/:countryCode"} element={<CountryDetail />} />
       </Routes>
-    </div>
+    </main>
   );
 }
 

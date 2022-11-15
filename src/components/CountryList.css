@@ -1,0 +1,22 @@
+#countries {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+}
+
+@media screen and (min-width: 430px) {
+  #countries {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+}
+.countries-light {
+  background-color: hsl(0, 0%, 98%);
+}
+.countries-dark {
+  background-color: hsl(207, 26%, 17%);
+}

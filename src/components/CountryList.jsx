@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import Country from "./Country.jsx";
+import "./CountryList.css";
+import { ThemeContext } from "../context/ThemeContext.jsx";
 
 function CountryList(props) {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div>
+    <section className={`countries-${theme}`} id={"countries"}>
       {props.countries.map((country) => {
         return <Country key={country["cca3"]} country={country} />;
-      })}
-    </div>
+      })}{" "}
+    </section>
   );
 }
-
 export default CountryList;

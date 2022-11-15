@@ -1,0 +1,25 @@
+header {
+  flex-grow: 0;
+  z-index: 10;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+
+span i {
+  margin: 10px;
+}
+
+.nav-light {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(200, 15%, 8%);
+  box-shadow: 0 0 5px 1px hsla(0, 0%, 0%, 20%);
+}
+
+.nav-dark {
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+}
