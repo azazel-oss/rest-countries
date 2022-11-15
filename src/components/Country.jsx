@@ -10,26 +10,28 @@ function Country({ country }) {
       className={`country country-${theme}`}
       to={`/rest-countries/${country["cca3"]}`}
     >
-      <img alt={`${country.name.common} flag`} src={country.flags.png} />
+      <article>
+        <img alt={`${country.name.common} flag`} src={country.flags.png} />
 
-      <div className={"country-details"}>
-        <div className={"country-name"}>{country.name.common}</div>
-        <div>
+        <div className={"country-details"}>
+          <div className={"country-name"}>{country.name.common}</div>
           <div>
-            <span className={"country-head"}>Population:</span>{" "}
-            {country.population.toLocaleString()}
-          </div>
-          <div>
-            <span className={"country-head"}>Region:</span> {country.region}
-          </div>
-          {country.capital && (
             <div>
-              <span className={"country-head"}>Capital:</span>{" "}
-              {country.capital.join(", ")}
+              <span className={"country-head"}>Population:</span>{" "}
+              {country.population.toLocaleString()}
             </div>
-          )}
+            <div>
+              <span className={"country-head"}>Region:</span> {country.region}
+            </div>
+            {country.capital && (
+              <div>
+                <span className={"country-head"}>Capital:</span>{" "}
+                {country.capital.join(", ")}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </article>
     </Link>
   );
 }
