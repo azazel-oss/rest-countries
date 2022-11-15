@@ -1,17 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Header.css";
-import { ThemeContext } from "../context/ThemeContext.jsx";
 import { Link } from "react-router-dom";
 
-function Header() {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+function Header({ theme, onThemeToggle }) {
   return (
     <header>
       <nav>
         <Link to={"/rest-countries/"}>
           <h3>Where in the world!</h3>
         </Link>
-        <span className={"theme-toggle"} onClick={toggleTheme}>
+        <span className={"theme-toggle"} onClick={onThemeToggle}>
           <i
             className={`fa-solid fa-${theme === "light" ? "moon" : "sun"}`}
           ></i>

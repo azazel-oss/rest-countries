@@ -1,11 +1,10 @@
 import Header from "./components/Header.jsx";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import CountryList from "./components/CountryList.jsx";
 import { Route, Routes } from "react-router-dom";
 import CountryDetail from "./components/CountryDetail.jsx";
 import "./App.css";
-import { ThemeContext } from "./context/ThemeContext.jsx";
 
 function App() {
   let timer = null;
@@ -13,7 +12,14 @@ function App() {
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(searchTerm);
   const [region, setRegion] = useState("default");
   const [countryData, setCountryData] = useState([]);
-  const { theme } = useContext(ThemeContext);
+  const [theme, setTheme] = useState("dark");
+
+  function toggleThemeHandler() {
+    setTheme((prevState) => {
+      return prevState === "dark" ? "light" : "dark";
+    });
+  }
+
   function inputChangeHandler(event) {
     setSearchTerm(event.target.value);
   }
@@ -60,11 +66,12 @@ function App() {
         } else setCountryData(allCountries.data);
       }
     }
+
     fetchData(debouncedSearchTerm, region);
   }, [debouncedSearchTerm, region]);
   return (
     <div className={`app-${theme}`}>
-      <Header />
+      <Header theme={theme} onThemeToggle={toggleThemeHandler} />
       <main>
         <Routes>
           <Route
