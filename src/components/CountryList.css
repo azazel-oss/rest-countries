@@ -15,9 +15,9 @@
     gap: 1.5rem;
   }
 }
-.countries-light {
+.app-light .countries {
   background-color: hsl(0, 0%, 98%);
 }
-.countries-dark {
+.app-dark .countries {
   background-color: hsl(207, 26%, 17%);
 }

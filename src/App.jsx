@@ -71,7 +71,7 @@ function App() {
             path={"/rest-countries/"}
             element={
               <>
-                <section className={`query-${theme}`} id={"query"}>
+                <section className={"query-container"} id={"query"}>
                   <div className={"input__country"}>
                     <i className="fa-solid fa-magnifying-glass"></i>
                     <input

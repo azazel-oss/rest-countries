@@ -7,7 +7,7 @@ function Header() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   return (
     <header>
-      <nav className={`nav-${theme}`}>
+      <nav>
         <Link to={"/rest-countries/"}>
           <h3>Where in the world!</h3>
         </Link>

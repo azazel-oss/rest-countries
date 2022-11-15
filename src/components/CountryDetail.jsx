@@ -1,14 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import { ThemeContext } from "../context/ThemeContext.jsx";
 import "./CountryDetail.css";
 
 function CountryDetail() {
   const { countryCode } = useParams();
   const [countryData, setCountryData] = useState({});
   const [countryBorders, setCountryBorders] = useState(null);
-  const { theme } = useContext(ThemeContext);
   useEffect(() => {
     async function fetchCountryData(code) {
       const countryData = await axios.get(
@@ -16,6 +14,7 @@ function CountryDetail() {
       );
       setCountryData(countryData.data[0]);
     }
+
     fetchCountryData(countryCode);
     setCountryBorders([]);
   }, [countryCode]);
@@ -23,6 +22,7 @@ function CountryDetail() {
     if (!Object.keys(countryData).length) {
       return;
     }
+
     async function fetchBorders(borders) {
       if (!borders) {
         setCountryBorders([]);
@@ -43,10 +43,11 @@ function CountryDetail() {
 
       setCountryBorders(result);
     }
+
     fetchBorders(countryData.borders);
   }, [countryData]);
   return (
-    <div className={`details details-${theme}`}>
+    <div className={`details`}>
       {countryData && Object.keys(countryData).length > 0 && countryBorders ? (
         <div>
           <Link className={"btn btn-back"} to={"/rest-countries"}>

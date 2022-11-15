@@ -65,29 +65,29 @@ main {
   min-height: 12.5rem;
 }
 
-.query-dark {
+.app-dark .query-container {
   background-color: hsl(207, 26%, 17%);
 }
 
-.query-dark select,
-.query-dark input,
-.query-dark .input__country {
+.app-dark .query-container select,
+.app-dark .query-container input,
+.app-dark .query-container .input__country {
   color: white;
 }
 
-.query-dark select,
-.query-dark input {
+.app-dark .query-container select,
+.app-dark .query-container input {
   background-color: hsl(209, 23%, 22%);
 }
 
-.query-light {
+.app-light .query-container {
   background-color: hsl(0, 0%, 98%);
 }
 
-.query-light select {
+.app-light .query-container select {
   box-shadow: 0 0 5px 1px hsla(0, 0%, 0%, 20%);
 }
 
-.query-light input {
+.app-light .query-container input {
   box-shadow: 0 0 5px 1px hsla(0, 0%, 0%, 20%);
 }

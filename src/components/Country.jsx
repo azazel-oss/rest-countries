@@ -1,15 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Country.css";
-import { ThemeContext } from "../context/ThemeContext.jsx";
 
 function Country({ country }) {
-  const { theme } = useContext(ThemeContext);
   return (
-    <Link
-      className={`country country-${theme}`}
-      to={`/rest-countries/${country["cca3"]}`}
-    >
+    <Link className={"country"} to={`/rest-countries/${country["cca3"]}`}>
       <article>
         <img alt={`${country.name.common} flag`} src={country.flags.png} />
 

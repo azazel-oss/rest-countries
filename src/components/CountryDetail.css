@@ -37,21 +37,21 @@
   text-decoration: none;
 }
 
-.details-dark {
+.app-dark .details {
   background-color: hsl(207, 26%, 17%);
   color: hsl(0, 0%, 100%);
 }
 
-.details-dark a:-webkit-any-link {
+.app-dark .details a:-webkit-any-link {
   color: hsl(0, 0%, 100%);
 }
 
-.details-light {
+.app-light .details {
   background-color: hsl(0, 0%, 98%);
   color: hsl(200, 15%, 8%);
 }
 
-.details-light a:-webkit-any-link {
+.app-light .details a:-webkit-any-link {
   color: hsl(200, 15%, 8%);
 }
 
@@ -92,10 +92,10 @@
   }
 }
 
-.details-dark .btn {
+.app-dark .details .btn {
   background-color: hsl(209, 23%, 22%);
 }
-.details-light .btn {
+.app-light .details .btn {
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0 0 5px 1px hsla(0, 0%, 0%, 20%);
 }
@@ -124,7 +124,7 @@
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: #fff transparent transparent transparent;
 }
-.details-light .lds-ring div {
+.app-light .details .lds-ring div {
   border-color: #000 transparent transparent transparent;
 }
 .lds-ring div:nth-child(1) {

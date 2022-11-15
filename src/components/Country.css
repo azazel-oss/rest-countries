@@ -23,19 +23,19 @@
   width: 100%;
 }
 
-.country-dark {
+.app-dark .country {
   background-color: hsl(209, 23%, 22%);
   color: hsl(0, 0%, 100%);
 }
 
-.country-dark:-webkit-any-link {
+.app-dark .country:-webkit-any-link {
   color: hsl(0, 0%, 100%);
 }
 
-.country-light {
+.app-light .country {
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0 0 5px 1px hsla(0, 0%, 0%, 20%);
 }
-.country-light:-webkit-any-link {
+.app-light .country:-webkit-any-link {
   color: hsl(200, 15%, 8%);
 }
