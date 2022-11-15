@@ -30,7 +30,7 @@ main {
 }
 
 #query input {
-  padding: 0.625rem 0.625rem 0.625rem 3.125rem;
+  padding: 0.625rem 2rem 0.625rem 3.125rem;
   border: none;
   font-family: "Nunito Sans", sans-serif;
   margin: 0.3rem;
@@ -53,7 +53,7 @@ main {
 .input__country .fa-circle-xmark {
   position: absolute;
   top: 1.0625rem;
-  right: 1.5625rem;
+  right: 1rem;
   cursor: pointer;
 }
 #query select {
